@@ -14,7 +14,7 @@ public class Main {
             total += i;
         }
         // number of numbers which can be divisible by 3 and 4 can be found with
-        // (inpNum / 12) + 1. (if you want to exclude 0, inpNum / 12 will be enough.
+        // (inpNum / 12) + 1. (if you want to exclude 0, inpNum / 12 will be enough.)
         average = total / ((inpNum / 12) + 1);
 
         System.out.println("Average of numbers divisible by 3 and 4: " + average);
