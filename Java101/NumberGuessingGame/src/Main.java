@@ -10,7 +10,7 @@ public class Main {
 
         final int upperBound = 100;
         int numberToGuess = random.nextInt(upperBound);
-        
+
         int remainingNumberOfGuesses = 5;
         int remainingInvalidAccess = 3;
         int guess;
@@ -28,6 +28,11 @@ public class Main {
             if (guess < 0 || guess > 99) {
                 remainingInvalidAccess--;
                 System.out.println("Invalid input! Remaining number of rights: " + remainingInvalidAccess);
+                if (remainingInvalidAccess == 0) {
+                    System.out.println();
+                    System.out.println("Game over!");
+                    System.out.println("Your number of rights to enter invalid value is over!");
+                }
             } else {
                 if (guess == numberToGuess) {
                     System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -43,20 +48,14 @@ public class Main {
                         } else {
                             System.out.println("Please guess lower.");
                         }
+                    } else {
+                        System.out.println();
+                        System.out.println("Game over!");
+                        System.out.println("Your number of rights to guess is over!");
                     }
                 }
             }
         } while (remainingNumberOfGuesses > 0 && remainingInvalidAccess > 0);
-
-        System.out.println();
-        if (remainingInvalidAccess == 0) {
-            System.out.println("Game over!");
-            System.out.println("Your number of rights to enter invalid value is over!");
-        }
-        if (remainingNumberOfGuesses == 0) {
-            System.out.println("Game over!");
-            System.out.println("Your number of rights to guess is over!");
-        }
 
     }
 
